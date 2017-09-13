@@ -1,7 +1,7 @@
 #!/bin/sh -eux
 
 go get -u github.com/constabulary/gb/...
-go get -u code.palmstonegames.com/gb-gae
+go get -u github.com/PalmStoneGames/gb-gae
 
 cd `dirname $0`
 
