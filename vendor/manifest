@@ -1,0 +1,25 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/golang/protobuf/proto",
+			"repository": "https://github.com/golang/protobuf",
+			"revision": "1643683e1b54a9e88ad26d98f81400c8c9d9f4f9",
+			"branch": "master",
+			"path": "/proto"
+		},
+		{
+			"importpath": "golang.org/x/net/context",
+			"repository": "https://go.googlesource.com/net",
+			"revision": "a337091b0525af65de94df2eb7e98bd9962dcbe2",
+			"branch": "master",
+			"path": "/context"
+		},
+		{
+			"importpath": "google.golang.org/appengine",
+			"repository": "https://github.com/golang/appengine",
+			"revision": "9d8544a6b2c7df9cff240fcf92d7b2f59bc13416",
+			"branch": "master"
+		}
+	]
+}
