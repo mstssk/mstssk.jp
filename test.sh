@@ -5,7 +5,7 @@ cd ./src/
 
 goreturns -w .
 gb generate app
-go tool vet .
+# go tool vet .
 golint ./...
 
 gb gae test ./... $@
