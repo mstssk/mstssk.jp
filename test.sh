@@ -3,7 +3,7 @@
 cd `dirname $0`
 cd ./src/
 
-goimports -w .
+goreturns -w .
 gb generate app
 go tool vet .
 golint ./...
