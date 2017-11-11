@@ -5,6 +5,7 @@ cd `dirname $0`
 PROJECT=mstssk-jp
 VERSION=`git rev-parse --abbrev-ref HEAD`
 
+set +x
 gb gae appcfg update \
   --application=$PROJECT \
   --version=$VERSION \

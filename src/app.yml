@@ -2,6 +2,9 @@ runtime: go
 api_version: go1.8
 
 handlers:
+- url: /api/.*
+  script: _go_app
+  secure: always
 - url: (.*)/
   static_files: public\1/index.html
   upload: public(.*)/index.html
