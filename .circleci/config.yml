@@ -8,6 +8,8 @@ jobs:
       # specify the version
       # - image: circleci/golang:1.8
       - image: vvakame/circleci-gaego
+        environment:
+            TZ: "/usr/share/zoneinfo/Asia/Tokyo"
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
