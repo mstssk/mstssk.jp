@@ -27,9 +27,18 @@ jobs:
       # specify any bash command here prefixed with `run: `
       # - run: go get -v -t -d ./...
       # - run: go test -v ./...
-      - run: date
-      - run: echo $GOPATH
-      - run: gcloud version
-      # - run: gcloud components update --quiet
+      - run:
+          name: show env
+          command: date && echo $GOPATH && gcloud version
+      # gcloudコマンドはdockerイメージに持った最新版を使用する。問題が発生した場合は↓コマンドでバージョンを固定する
+      # - run: gcloud --quiet components update --version 179.0.0
+
+      - run:
+          name: go_appengine_sdk
+          command: |
+            rm -rf /work/go_appengine &&
+            curl -o /work/go_appengine_sdk_linux_amd64.zip https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_linux_amd64-1.9.60.zip &&
+            unzip -q -d /work /work/go_appengine_sdk_linux_amd64.zip
+
       - run: ./setup.sh
       - run: ./test.sh
