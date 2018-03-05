@@ -30,6 +30,7 @@ jobs:
     working_directory: /go/src/github.com/mstssk/mstssk.jp
     steps:
       # - checkout
+      - run: echo $CIRCLE_BRANCH $CIRCLE_REPOSITORY_URL
       - run: *checkout_shallow
 
       # specify any bash command here prefixed with `run: `
