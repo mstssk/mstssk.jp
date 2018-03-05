@@ -36,8 +36,8 @@ jobs:
       - run: *checkout_shallow
       - run: echo $CIRCLE_SHA1
       - run: git show HEAD | cat
-      - run: git show | cat
-      - run: git log | cat
+      # - run: git show | cat
+      # - run: git log | cat
 
       # specify any bash command here prefixed with `run: `
       # - run: go get -v -t -d ./...
