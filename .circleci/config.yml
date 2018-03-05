@@ -6,8 +6,8 @@ jobs:
   build:
     docker:
       # specify the version
-      - image: circleci/golang:1.8
-      # - image: vvakame/circleci-gaego
+      # - image: circleci/golang:1.8
+      - image: vvakame/circleci-gaego
         environment:
             TZ: "/usr/share/zoneinfo/Asia/Tokyo"
 
