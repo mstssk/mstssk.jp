@@ -34,8 +34,8 @@ jobs:
       # - checkout
       - run: echo $CIRCLE_BRANCH $CIRCLE_REPOSITORY_URL
       - run: *checkout_shallow
-      - run: git show
-      - run: git log
+      - run: git show | cat
+      - run: git log | cat
 
       # specify any bash command here prefixed with `run: `
       # - run: go get -v -t -d ./...
