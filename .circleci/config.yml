@@ -5,7 +5,8 @@ references:
       name: Checkout shallow
       command: |
         REPO_HTTPS_URL=$(echo $CIRCLE_REPOSITORY_URL | sed -e "s|git@github.com:|https://github.com/|")
-        git clone -b $CIRCLE_SHA1 --single-branch --depth=1 $REPO_HTTPS_URL .
+        git clone -b $CIRCLE_BRANCH --single-branch --depth=1 $REPO_HTTPS_URL .
+        git reset --hard $CIRCLE_SHA1 || git fetch --unshallow && git reset --hard $CIRCLE_SHA1
 
 # Golang CircleCI 2.0 configuration file
 #
@@ -32,7 +33,7 @@ jobs:
     working_directory: /go/src/github.com/mstssk/mstssk.jp
     steps:
       # - checkout
-      - run: echo $CIRCLE_BRANCH $CIRCLE_REPOSITORY_URL
+      - run: echo $CIRCLE_BRANCH $CIRCLE_REPOSITORY_URL $CIRCLE_WORKING_DIRECTORY
       - run: *checkout_shallow
       - run: echo $CIRCLE_SHA1
       - run: git show HEAD | cat
