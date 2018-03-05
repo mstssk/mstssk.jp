@@ -28,7 +28,7 @@ jobs:
             - source-v1-{{ .Branch }}-{{ .Revision }}
             - source-v1-{{ .Branch }}-
             - source-v1-
-      - run: touch .circleci/config.yml
+      - run: mkdir .circleci && touch .circleci/config.yml
       - checkout
       - save_cache:
           key: source-v1-{{ .Branch }}-{{ .Revision }}
