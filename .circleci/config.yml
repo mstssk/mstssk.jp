@@ -22,6 +22,7 @@ jobs:
     ####   /go/src/bitbucket.org/circleci/go-tool
     working_directory: /go/src/github.com/mstssk/mstssk.jp
     steps:
+      - run: git version
       - checkout
 
       # specify any bash command here prefixed with `run: `
