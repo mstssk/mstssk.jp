@@ -36,7 +36,7 @@ jobs:
       - run: echo $CIRCLE_BRANCH $CIRCLE_REPOSITORY_URL $CIRCLE_WORKING_DIRECTORY
       - run: *checkout_shallow
       - run: echo $CIRCLE_SHA1
-      - run: git show HEAD | cat
+      - run: git --no-pager show HEAD --summary
       # - run: git show | cat
       # - run: git log | cat
 
