@@ -3,7 +3,9 @@ references:
   commands:
     checkout_shallow: &checkout_shallow
       name: Checkout shallow
-      command: git clone -b $CIRCLE_BRANCH --single-branch --depth=1 $CIRCLE_REPOSITORY_URL .
+      command: |
+        REPO_HTTPS_URL=$(echo $CIRCLE_REPOSITORY_URL | sed -e "s|git@github.com:|https://github.com/|")
+        git clone -b $CIRCLE_BRANCH --single-branch --depth=1 $REPO_HTTPS_URL .
 
 # Golang CircleCI 2.0 configuration file
 #
