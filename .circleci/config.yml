@@ -30,6 +30,7 @@ jobs:
             - source-v1-
       - run: mkdir .circleci && touch .circleci/config.yml
       - checkout
+      - run: pwd
       - run: ls -l
       - save_cache:
           key: source-v1-{{ .Branch }}-{{ .Revision }}
