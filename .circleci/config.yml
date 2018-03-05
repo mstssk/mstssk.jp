@@ -1,3 +1,10 @@
+# アンカーをまとめる場所 ref https://qiita.com/terrierscript/items/3568690b5da29ab034dc
+references:
+  commands:
+    checkout_shallow: &checkout_shallow
+      name: Checkout shallow
+      command: git clone -b $CIRCLE_BRANCH --single-branch --depth=1 $CIRCLE_REPOSITORY_URL .
+
 # Golang CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-go/ for more details
@@ -22,8 +29,8 @@ jobs:
     ####   /go/src/bitbucket.org/circleci/go-tool
     working_directory: /go/src/github.com/mstssk/mstssk.jp
     steps:
-      - run: git version
-      - checkout
+      # - checkout
+      - run: *checkout_shallow
 
       # specify any bash command here prefixed with `run: `
       # - run: go get -v -t -d ./...
