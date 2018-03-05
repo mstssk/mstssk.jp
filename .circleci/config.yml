@@ -22,7 +22,23 @@ jobs:
     ####   /go/src/bitbucket.org/circleci/go-tool
     working_directory: /go/src/github.com/mstssk/mstssk.jp
     steps:
+      # Checkout with cache https://circleci.com/docs/2.0/caching/#source-caching
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
+      # - run: mkdir .circleci && touch .circleci/config.yml
+      - run: git reset HEAD --hard
       - checkout
+      # - run: git status
+      # - run: git reset HEAD --hard
+      # - run: pwd
+      - run: ls -l
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ".git"
 
       # specify any bash command here prefixed with `run: `
       # - run: go get -v -t -d ./...
