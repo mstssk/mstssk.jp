@@ -30,6 +30,8 @@ jobs:
             - source-v1-
       - run: mkdir .circleci && touch .circleci/config.yml
       - checkout
+      - run: git status
+      - run: git reset HEAD --hard
       - run: pwd
       - run: ls -l
       - save_cache:
