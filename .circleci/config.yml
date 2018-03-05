@@ -30,6 +30,7 @@ jobs:
             - source-v1-
       - run: git reset HEAD --hard
       - checkout
+      - run: git --no-pager show --summary
       - save_cache:
           key: source-v1-{{ .Branch }}-{{ .Revision }}
           paths:
