@@ -33,6 +33,7 @@ jobs:
     ####   /go/src/bitbucket.org/circleci/go-tool
     working_directory: /go/src/github.com/mstssk/mstssk.jp
     steps:
+      - run: npm -v
       # - checkout
       - run: echo $CIRCLE_BRANCH $CIRCLE_REPOSITORY_URL $CIRCLE_WORKING_DIRECTORY
       - run: *checkout_shallow
