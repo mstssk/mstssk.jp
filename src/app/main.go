@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os"
 	"runtime"
 
 	"google.golang.org/appengine"
@@ -23,6 +24,7 @@ func handleAPIHealth(w http.ResponseWriter, r *http.Request) {
 	c := appengine.NewContext(r)
 
 	log.Debugf(c, "%#v", c)
+	log.Debugf(c, "os.Environ(): %#v", os.Environ())
 
 	w.Header().Set("Content-Type", "application/json")
 	res := map[string]string{
